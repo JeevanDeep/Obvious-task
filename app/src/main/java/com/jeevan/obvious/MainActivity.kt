@@ -1,4 +1,4 @@
-package com.jeevan
+package com.jeevan.obvious
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
