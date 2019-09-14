@@ -2,6 +2,7 @@ package com.jeevan.obvious.di
 
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.jeevan.obvious.BuildConfig
+import com.jeevan.obvious.network.ApiClient
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -29,7 +30,7 @@ class NetworkModule {
     @Singleton
     fun getOkHttpClient(
         loggingInterceptor: HttpLoggingInterceptor
-        ): OkHttpClient {
+    ): OkHttpClient {
         val httpBuilder = OkHttpClient.Builder()
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
@@ -47,4 +48,8 @@ class NetworkModule {
     fun getLoggingInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC)
     }
+
+    @Provides
+    @Singleton
+    fun getApiClient(retrofit: Retrofit): ApiClient = retrofit.create(ApiClient::class.java)
 }

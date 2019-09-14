@@ -2,6 +2,7 @@ package com.jeevan.obvious
 
 import android.app.Application
 import com.facebook.stetho.Stetho
+import com.jakewharton.threetenabp.AndroidThreeTen
 import com.jeevan.obvious.di.ApplicationComponent
 import com.jeevan.obvious.di.ApplicationModule
 import com.jeevan.obvious.di.DaggerApplicationComponent
@@ -13,6 +14,7 @@ class ObviousApp: Application() {
 
         setupDagger()
         Stetho.initializeWithDefaults(this)
+        AndroidThreeTen.init(this)
     }
 
     private fun setupDagger() {
