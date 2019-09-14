@@ -1,11 +1,15 @@
 package com.jeevan.obvious.home.response
 
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "potd_table")
 data class PictureOfTheDayResponse(
     @SerializedName("copyright")
     val copyright: String,
+    @PrimaryKey
     @SerializedName("date")
     val date: String,
     @SerializedName("explanation")
