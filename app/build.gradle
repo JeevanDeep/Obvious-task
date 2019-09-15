@@ -11,13 +11,13 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.jeevan.obvious"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "API_KEY", "\"srhphLDfVsVadgIAsYXSXNTSVkNkNDFb13WBdgjs\"")
-        buildConfigField("String", "BASE_URL","\"https://api.nasa.gov/\"")
+        buildConfigField("String", "BASE_URL", "\"https://api.nasa.gov/\"")
 
     }
     buildTypes {

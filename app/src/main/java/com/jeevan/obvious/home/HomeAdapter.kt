@@ -10,7 +10,10 @@ import com.bumptech.glide.Glide
 import com.jeevan.obvious.R
 import com.jeevan.obvious.home.response.PictureOfTheDayResponse
 
-class HomeAdapter(private val list: MutableList<PictureOfTheDayResponse>) :
+class HomeAdapter(
+    private val list: MutableList<PictureOfTheDayResponse>,
+    private val onClick: (PictureOfTheDayResponse) -> Unit
+) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val TYPE_DATA = 0
     private val TYPE_PROGRESS = 1
@@ -56,11 +59,13 @@ class HomeAdapter(private val list: MutableList<PictureOfTheDayResponse>) :
     }
 
     inner class HomeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val potd:ImageView = itemView.findViewById(R.id.potd)
+        private val potd: ImageView = itemView.findViewById(R.id.potd)
         private val description: TextView = itemView.findViewById(R.id.description)
         fun bind(pictureOfTheDayResponse: PictureOfTheDayResponse) {
             description.text = pictureOfTheDayResponse.title
             Glide.with(itemView).load(pictureOfTheDayResponse.url).into(potd)
+
+            itemView.setOnClickListener { onClick.invoke(pictureOfTheDayResponse) }
         }
     }
 
