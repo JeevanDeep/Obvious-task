@@ -32,9 +32,12 @@ class HomeViewModel @Inject constructor(private val homeRepo: HomeRepo) : ViewMo
                     list.add(response.data)
                 }
             }
+            if (list.size != 10)
+                _canRequestMore = false
+
+            _canRequestMore = true
             _potdResponse.value = list
             currentDate = currentDate.minusDays(10)
-            _canRequestMore = true
         }
     }
 }
