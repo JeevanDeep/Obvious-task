@@ -1,10 +1,11 @@
-package com.jeevan.obvious
+package com.jeevan.obvious.home
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.jeevan.obvious.ObviousApp
+import com.jeevan.obvious.R
 import com.jeevan.obvious.di.ViewModelFactory
-import com.jeevan.obvious.home.HomeViewModel
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +18,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         ObviousApp.applicationComponent.inject(this)
-
-        homeViewmodel.getPotd()
     }
 }

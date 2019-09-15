@@ -1,7 +1,7 @@
 package com.jeevan.obvious.di
 
 
-import com.jeevan.obvious.MainActivity
+import com.jeevan.obvious.home.MainActivity
 import com.jeevan.obvious.ObviousApp
 import dagger.Component
 import javax.inject.Singleton
