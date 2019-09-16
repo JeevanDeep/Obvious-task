@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         homeViewmodel.potdResponse.observe(this) { list ->
             progressBar.visibility = View.GONE
             if (list.isEmpty() && potdRecyclerView.layoutManager?.itemCount == 0) {
-                errorText.visibility = View.GONE
+                errorText.visibility = View.VISIBLE
             } else {
                 adapter.showProgress = homeViewmodel.canRequestMore
                 adapter.addData(list)
