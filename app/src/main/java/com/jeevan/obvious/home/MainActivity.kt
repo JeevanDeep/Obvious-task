@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity() {
         ObviousApp.applicationComponent.inject(this)
         setupAdapter()
         homeViewmodel.getPotd()
+
+        supportActionBar?.title = "Home"
         homeViewmodel.potdResponse.observe(this) { list ->
             progressBar.visibility = View.GONE
             if (list.isEmpty() && potdRecyclerView.layoutManager?.itemCount == 0) {

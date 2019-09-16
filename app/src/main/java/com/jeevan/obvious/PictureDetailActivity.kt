@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -21,6 +22,11 @@ class PictureDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_picture_detail)
         val response = intent.getParcelableExtra<PictureOfTheDayResponse>(RESPONSE)!!
 
+        supportActionBar?.apply {
+            title = response.title
+            setDisplayHomeAsUpEnabled(true)
+            setDefaultDisplayHomeAsUpEnabled(true)
+        }
         supportPostponeEnterTransition()
         setupUI(response)
     }
@@ -51,6 +57,7 @@ class PictureDetailActivity : AppCompatActivity() {
             .into(potd)
         findViewById<TextView>(R.id.title).text = response.title
         findViewById<TextView>(R.id.explanation).text = response.explanation
+        findViewById<TextView>(R.id.date).text = response.date
     }
 
     companion object {
@@ -59,5 +66,11 @@ class PictureDetailActivity : AppCompatActivity() {
             Intent(context, PictureDetailActivity::class.java).apply {
                 putExtra(RESPONSE, response)
             }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home)
+            finish()
+        return true
     }
 }
