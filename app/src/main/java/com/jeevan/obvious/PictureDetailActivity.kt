@@ -1,76 +1,68 @@
 package com.jeevan.obvious
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.DataSource
-import com.bumptech.glide.load.engine.GlideException
-import com.bumptech.glide.request.RequestListener
-import com.bumptech.glide.request.target.Target
+import androidx.viewpager2.widget.ViewPager2
 import com.jeevan.obvious.home.response.PictureOfTheDayResponse
 import kotlinx.android.synthetic.main.activity_picture_detail.*
 
 class PictureDetailActivity : AppCompatActivity() {
 
+    private lateinit var response: ArrayList<PictureOfTheDayResponse>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_picture_detail)
-        val response = intent.getParcelableExtra<PictureOfTheDayResponse>(RESPONSE)!!
+        response = intent.getParcelableArrayListExtra<PictureOfTheDayResponse>(RESPONSE)!!
+        val position = intent.getIntExtra(POSITION, 0)
 
         supportActionBar?.apply {
-            title = response.title
+            title = response[position].title
             setDisplayHomeAsUpEnabled(true)
             setDefaultDisplayHomeAsUpEnabled(true)
         }
-        supportPostponeEnterTransition()
-        setupUI(response)
+
+        viewerModeViewPager.adapter = ViewerModeAdapter(response)
+        viewerModeViewPager.setCurrentItem(position, false)
+        viewerModeViewPager.registerOnPageChangeCallback(object :
+            ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                supportActionBar?.title = response[position].title
+            }
+        })
     }
 
-    private fun setupUI(response: PictureOfTheDayResponse) {
-        Glide.with(this).load(response.url)
-            .listener(object : RequestListener<Drawable> {
-                override fun onLoadFailed(
-                    e: GlideException?,
-                    model: Any?,
-                    target: Target<Drawable>?,
-                    isFirstResource: Boolean
-                ): Boolean {
-                    return false
-                }
-
-                override fun onResourceReady(
-                    resource: Drawable?,
-                    model: Any?,
-                    target: Target<Drawable>?,
-                    dataSource: DataSource?,
-                    isFirstResource: Boolean
-                ): Boolean {
-                    supportStartPostponedEnterTransition()
-                    return false
-                }
-            })
-            .into(potd)
-        findViewById<TextView>(R.id.title).text = response.title
-        findViewById<TextView>(R.id.explanation).text = response.explanation
-        findViewById<TextView>(R.id.date).text = response.date
-    }
 
     companion object {
         private const val RESPONSE = "response"
-        fun newInstance(context: Context, response: PictureOfTheDayResponse) =
+        const val POSITION = "position"
+        fun newInstance(
+            context: Context,
+            response: ArrayList<PictureOfTheDayResponse>,
+            position: Int
+        ) =
             Intent(context, PictureDetailActivity::class.java).apply {
-                putExtra(RESPONSE, response)
+                putParcelableArrayListExtra(RESPONSE, response)
+                putExtra(POSITION, position)
             }
+    }
+
+    override fun onBackPressed() {
+        Intent().apply {
+            putExtra(POSITION, viewerModeViewPager.currentItem)
+            setResult(Activity.RESULT_OK, this)
+        }
+        super.onBackPressed()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home)
-            finish()
+            onBackPressed()
         return true
     }
 }

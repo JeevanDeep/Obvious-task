@@ -12,7 +12,7 @@ import com.jeevan.obvious.home.response.PictureOfTheDayResponse
 
 class HomeAdapter(
     private val list: MutableList<PictureOfTheDayResponse>,
-    private val onClick: (PictureOfTheDayResponse) -> Unit
+    private val onClick: (List<PictureOfTheDayResponse>, Int) -> Unit
 ) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val TYPE_DATA = 0
@@ -65,7 +65,7 @@ class HomeAdapter(
             description.text = pictureOfTheDayResponse.title
             Glide.with(itemView).load(pictureOfTheDayResponse.url).into(potd)
 
-            itemView.setOnClickListener { onClick.invoke(pictureOfTheDayResponse) }
+            itemView.setOnClickListener { onClick.invoke(list, adapterPosition) }
         }
     }
 

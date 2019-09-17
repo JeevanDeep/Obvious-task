@@ -1,5 +1,7 @@
 package com.jeevan.obvious.home
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
@@ -43,8 +45,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupAdapter() {
         adapter =
-            HomeAdapter(mutableListOf(), onClick = { pictureOfTheDayResponse ->
-                startActivity(PictureDetailActivity.newInstance(this, pictureOfTheDayResponse))
+            HomeAdapter(mutableListOf(), onClick = { list, position ->
+                startActivityForResult(
+                    PictureDetailActivity.newInstance(
+                        this,
+                        ArrayList(list),
+                        position
+                    ), VIEWER_MODE_CODE
+                )
             })
         potdRecyclerView.adapter = adapter
 
@@ -74,5 +82,18 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == VIEWER_MODE_CODE && resultCode == Activity.RESULT_OK) {
+            val position = data?.getIntExtra(PictureDetailActivity.POSITION, 0) ?: 0
+            potdRecyclerView.scrollToPosition(position)
+        }
+    }
+
+    companion object {
+        private const val VIEWER_MODE_CODE = 1709
     }
 }
