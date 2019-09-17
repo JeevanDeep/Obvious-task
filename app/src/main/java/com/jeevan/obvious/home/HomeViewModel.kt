@@ -27,7 +27,7 @@ class HomeViewModel @Inject constructor(private val homeRepo: HomeRepo) : ViewMo
     }
 
     fun getPotd() {
-        if (savedList != null) {
+        if (savedList!= null && savedList?.isEmpty() == false) {
             _potdResponse.value = savedList
             currentDate = LocalDate.parse(savedList!![savedList!!.size - 1].date)
             savedList = null
