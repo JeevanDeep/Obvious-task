@@ -1,4 +1,4 @@
-package com.jeevan.obvious
+package com.jeevan.obvious.viewer
 
 import android.app.Activity
 import android.content.Context
@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
+import com.jeevan.obvious.R
 import com.jeevan.obvious.home.response.PictureOfTheDayResponse
 import kotlinx.android.synthetic.main.activity_picture_detail.*
 

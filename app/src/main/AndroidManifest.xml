@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".PictureDetailActivity"
+            android:name=".viewer.PictureDetailActivity"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".home.MainActivity">

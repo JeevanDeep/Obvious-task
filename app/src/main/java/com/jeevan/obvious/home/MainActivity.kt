@@ -10,7 +10,7 @@ import androidx.lifecycle.observe
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jeevan.obvious.ObviousApp
-import com.jeevan.obvious.PictureDetailActivity
+import com.jeevan.obvious.viewer.PictureDetailActivity
 import com.jeevan.obvious.R
 import com.jeevan.obvious.di.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*

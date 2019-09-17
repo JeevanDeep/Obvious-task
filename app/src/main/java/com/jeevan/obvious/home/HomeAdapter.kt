@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.jeevan.obvious.R
 import com.jeevan.obvious.home.response.PictureOfTheDayResponse
+import com.jeevan.obvious.loadImage
 
 class HomeAdapter(
     val list: MutableList<PictureOfTheDayResponse>,
@@ -63,7 +64,7 @@ class HomeAdapter(
         private val description: TextView = itemView.findViewById(R.id.description)
         fun bind(pictureOfTheDayResponse: PictureOfTheDayResponse) {
             description.text = pictureOfTheDayResponse.title
-            Glide.with(itemView).load(pictureOfTheDayResponse.url).into(potd)
+            potd.loadImage(pictureOfTheDayResponse.url)
 
             itemView.setOnClickListener { onClick.invoke(list, adapterPosition) }
         }

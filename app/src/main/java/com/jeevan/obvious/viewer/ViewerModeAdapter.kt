@@ -1,4 +1,4 @@
-package com.jeevan.obvious
+package com.jeevan.obvious.viewer
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.jeevan.obvious.R
 import com.jeevan.obvious.home.response.PictureOfTheDayResponse
+import com.jeevan.obvious.loadImage
 
 class ViewerModeAdapter(private val list: List<PictureOfTheDayResponse>) :
     RecyclerView.Adapter<ViewerModeAdapter.ViewerModeViewHolder>() {
@@ -35,8 +37,7 @@ class ViewerModeAdapter(private val list: List<PictureOfTheDayResponse>) :
             title.text = response.title
             explanation.text = response.explanation
             date.text = response.date
-            Glide.with(itemView.context).load(response.url)
-                .into(potd)
+            potd.loadImage(response.url)
         }
     }
 }
