@@ -43,6 +43,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        homeViewmodel.saveState(adapter.list)
+    }
+
     private fun setupAdapter() {
         adapter =
             HomeAdapter(mutableListOf(), onClick = { list, position ->

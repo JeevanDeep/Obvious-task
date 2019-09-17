@@ -11,7 +11,7 @@ import com.jeevan.obvious.R
 import com.jeevan.obvious.home.response.PictureOfTheDayResponse
 
 class HomeAdapter(
-    private val list: MutableList<PictureOfTheDayResponse>,
+    val list: MutableList<PictureOfTheDayResponse>,
     private val onClick: (List<PictureOfTheDayResponse>, Int) -> Unit
 ) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {

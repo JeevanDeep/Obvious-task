@@ -21,7 +21,18 @@ class HomeViewModel @Inject constructor(private val homeRepo: HomeRepo) : ViewMo
     val potdResponse: LiveData<List<PictureOfTheDayResponse>>
         get() = _potdResponse
 
+    private var savedList: List<PictureOfTheDayResponse>? = null
+    fun saveState(list: List<PictureOfTheDayResponse>) {
+        savedList = list
+    }
+
     fun getPotd() {
+        if (savedList != null) {
+            _potdResponse.value = savedList
+            currentDate = LocalDate.parse(savedList!![savedList!!.size - 1].date)
+            savedList = null
+            return
+        }
         _canRequestMore = false
         viewModelScope.launch {
             val list = mutableListOf<PictureOfTheDayResponse>()
