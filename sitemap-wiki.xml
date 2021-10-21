@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://jeevandeep.github.io/Obvious-task/wiki</loc>
+        <lastmod>2021-10-21</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://jeevandeep.github.io/Obvious-task/wiki/installation</loc>
+        <lastmod>2021-10-21</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://jeevandeep.github.io/Obvious-task/wiki/configuration</loc>
+        <lastmod>2021-10-21</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://jeevandeep.github.io/Obvious-task/wiki/features</loc>
+        <lastmod>2021-10-21</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://jeevandeep.github.io/Obvious-task/wiki/features/one</loc>
+        <lastmod>2021-10-21</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://jeevandeep.github.io/Obvious-task/wiki/features/two</loc>
+        <lastmod>2021-10-21</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    <url>
+        <loc>https://jeevandeep.github.io/Obvious-task/wiki/extending</loc>
+        <lastmod>2021-10-21</lastmod>
+        <priority>0.0</priority>
+        
+    </url>
+    
+</urlset>

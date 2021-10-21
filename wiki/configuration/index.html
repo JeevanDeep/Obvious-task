@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>
+<!--
+    Editorial by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+
+
+
+
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+<meta name="generator" content="Orchid 0.17.2"/>
+<link rel="icon" href="https://jeevandeep.github.io/Obvious-task/favicon.ico">
+
+
+<meta name="robots" content="index, follow">
+
+
+
+<title>Basic Configuration</title>
+
+
+<meta name="description" content="This is a short description of this project.">
+
+
+
+<link rel="prev" href="https://jeevandeep.github.io/Obvious-task/wiki/installation">
+
+
+<link rel="next" href="https://jeevandeep.github.io/Obvious-task/wiki/features">
+
+
+<script>
+    window.site = {"orchidVersion":"0.17.2","baseUrl":"https://jeevandeep.github.io/Obvious-task","environment":"debug","version":"1.0.0"};
+</script>
+
+
+
+
+
+<!-- start:debug info -->
+
+<!-- THEME -->
+<!-- Type: Editorial -->
+<!-- Class: com.eden.orchid.editorial.EditorialTheme -->
+
+<!-- PAGE -->
+<!-- Type: wiki -->
+<!-- Class: com.eden.orchid.wiki.pages.WikiPage -->
+<!-- Layout: index -->
+<!-- Resolved Layout: templates/layouts/index.peb -->
+<!-- Page Template: wiki, page -->
+<!-- Resolved Page Template:  -->
+
+<!-- RESOURCE -->
+<!-- Class: com.eden.orchid.api.resources.resource.FileResource -->
+<!-- Source Filename: wiki/configuration.md -->
+
+<!-- COMPLETE PAGE CONFIGURATION -->
+<script>
+    window.allData = {"reference":{"path":"wiki","baseUrl":"https://jeevandeep.github.io/Obvious-task","fileName":"configuration","extension":"html","usePrettyUrl":true,"link":"https://jeevandeep.github.io/Obvious-task/wiki/configuration"},"next":{"path":"wiki","baseUrl":"https://jeevandeep.github.io/Obvious-task","fileName":"features","extension":"html","usePrettyUrl":true,"link":"https://jeevandeep.github.io/Obvious-task/wiki/features"},"previous":{"path":"wiki","baseUrl":"https://jeevandeep.github.io/Obvious-task","fileName":"installation","extension":"html","usePrettyUrl":true,"link":"https://jeevandeep.github.io/Obvious-task/wiki/installation"},"description":"","title":"Basic Configuration"};
+</script>
+
+<!-- end:debug info -->
+
+
+
+<!-- start:inject styles -->
+<link rel="stylesheet" type="text/css" href="https://jeevandeep.github.io/Obvious-task/Editorial/10e4af13/assets/css/editorial_main.css"/>
+<link rel="stylesheet" type="text/css" href="https://jeevandeep.github.io/Obvious-task/Editorial/10e4af13/assets/css/editorial_orchidCustomizations.css"/>
+<link rel="stylesheet" type="text/css" href="https://jeevandeep.github.io/Obvious-task/Editorial/10e4af13/assets/css/orchidSearch.css"/>
+<!-- end:inject styles -->
+
+</head>
+<body class="is-loading">
+
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Header -->
+            
+                <header id="header">
+    <a href="https://jeevandeep.github.io/Obvious-task" class="logo">Moj</a>
+    <ul class="icons">
+    
+    
+        <li>
+            <a href="https://github.com/JeevanDeep/Obvious-task" class="icon fa-github">
+                <span class="label">github</span>
+            </a>
+        </li>
+    
+    
+    </ul>
+</header>
+            
+            
+            
+            
+                <section id="pageContent">
+                    <header class="major"><h2>Basic Configuration</h2></header>
+                    <article>
+                        
+    <!-- start:inject components -->
+    
+        
+            
+                
+                    
+                        <h3 id="before-writing-your-first-code-make-sure-to-install-following-plugins-in-your-ide-and-make-required-changes-in-editor-settings-as-below">Before writing your first code, make sure to install following plugins in your IDE and make required changes in editor settings as below:</h3>
+<h3 id="1-detekt">1) Detekt</h3>
+<p>Moj android app uses <a href="https://github.com/detekt/detekt">detekt</a> for lint and static code analysis. make sure you have plugin installed so that you can see the errors reported by the plugin in real time. More regarding lint on wiki page.</p>
+<h3 id="how-to-setup-detekt">How to setup detekt:</h3>
+<ol>
+<li>Install <em><strong>detekt</strong></em> plugin from Android Studio Preferences -&gt; Plugins -&gt; Marketplace -&gt; search for <em><strong>detekt</strong></em></li>
+<li>Once installed, restart android studio, navigate Android Studio Preferences -&gt; tools -&gt; detekt and enable  the <strong>enable detekt</strong>, <strong>enable formatting (ktlint) rules</strong>, <strong>treat detekt findings as errors</strong> options.</li>
+<li>In <em>Configuration Files</em>, put the following path (modify the initial path as per your username) <em><strong>/Users/username/StudioProjects/cloned-directory-name/static-analysis/detekt-config.yml</strong></em></li>
+<li>In <em>Baseline File</em>, put the following path (modify the path as per your username)
+<em><strong>/Users/username/StudioProjects/cloned-directory-name/static-analysis/combined-detekt-baseline.xml</strong></em></li>
+<li>Apply and save</li>
+</ol>
+<h3 id="2-setting-the-correct-java-version">2) Setting the correct Java version</h3>
+<p>Moj App is using <a href="https://developer.android.com/training/dependency-injection/hilt-android">Dagger Hilt</a> for dependecy injection which requires gradle JDK to be <strong>11</strong>. Make sure it is set as 11 in the Android studio settings</p>
+<h3 id="how-to-check-and-update-jdk-version">How to check and update JDK version</h3>
+<ol>
+<li>Navigate Android Studio Preferences -&gt; Build, Execution, Deployment -&gt; Build tools -&gt; Gradle.</li>
+<li>If Gradle JDK is set to 11, ignore step 3 and 4</li>
+<li>If Gradle JDK is not set to 11, click on the dropdown and select <strong>11 version</strong></li>
+<li>Click on Apply and save</li>
+</ol>
+
+                    
+                
+            
+        
+    
+    <!-- end:inject components -->
+
+
+                    </article>
+                </section>
+            
+        </div>
+        <hr>
+
+        <!-- Page Footer -->
+        <div class="inner">
+    <footer id="footer">
+        <div class="clearfix">
+            
+                <div class="float-left">
+                    <a href="https://jeevandeep.github.io/Obvious-task/wiki/installation" class="button special small pill">
+                        <span>&larr;</span> Installation
+                    </a>
+                </div>
+            
+            
+                <div class="float-right">
+                    <a href="https://jeevandeep.github.io/Obvious-task/wiki/features" class="button special small pill">
+                        Features<span>&rarr;</span>
+                    </a>
+                </div>
+            
+        </div>
+    </footer>
+</div>
+
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+    <div class="inner">
+
+        <!-- Search -->
+        <section id="search" class="alt">
+            <form data-orchid-search="">
+                <input type="text" name="query" id="query" placeholder="Search"/>
+            </form>
+            <div class="box" id="search-results" data-orchid-search-results style="display: none;">
+                <b>Search Results</b>
+                <ul></ul>
+            </div>
+            <div class="box" id="search-progress" data-orchid-search-progress style="display: none;">
+                <div class="loader">Loading...</div>
+            </div>
+        </section>
+
+        <!-- Menu -->
+        <nav id="siteNav" class="menu">
+            <header class="major">
+                <h2>Moj</h2>
+            </header>
+            <ul class="top-level">
+                
+                    
+    
+    <li>
+        <a class="subheader">Wiki</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://jeevandeep.github.io/Obvious-task/wiki/installation">Installation</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://jeevandeep.github.io/Obvious-task/wiki/configuration">Basic Configuration</a>
+    </li>
+    
+
+                
+                    
+    <li>
+        <span class="opener">Features</span>
+        <ul>
+        
+            
+    
+    <li>
+        <a href="https://jeevandeep.github.io/Obvious-task/wiki/features/one">Feature One</a>
+    </li>
+    
+
+        
+            
+    
+    <li>
+        <a href="https://jeevandeep.github.io/Obvious-task/wiki/features/two">Feature Two</a>
+    </li>
+    
+
+        
+        </ul>
+    </li>
+
+                
+                    
+    
+    <li>
+        <a href="https://jeevandeep.github.io/Obvious-task/wiki/extending">Extending</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a href="https://jeevandeep.github.io/Obvious-task/changelog">Changelog</a>
+    </li>
+    
+
+                
+                    
+    
+    <li>
+        <a class="subheader">API Docs</a>
+    </li>
+    
+
+                
+            </ul>
+        </nav>
+        
+
+        <!-- Section -->
+        <section>
+            <p class="text-center">
+                Currently 1.0.0. Created with <a href="https://orchid.netlify.com">Orchid </a> and <b>Orchid Editorial Theme</b>.
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright text-center">&copy; JavaEden. All rights reserved.<br>Design by <a href="https://html5up.net">HTML5 UP</a></p>
+        </footer>
+
+    </div>
+</div>
+</div>
+
+<!-- start:inject scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+<script src="https://jeevandeep.github.io/Obvious-task/Editorial/10e4af13/assets/js/editorial_util.js"></script>
+<script src="https://jeevandeep.github.io/Obvious-task/Editorial/10e4af13/assets/js/editorial_main.js"></script>
+<script src="https://jeevandeep.github.io/Obvious-task/Editorial/10e4af13/assets/js/editorial_orchidCustomizations.js"></script>
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script src="https://jeevandeep.github.io/Obvious-task/Editorial/10e4af13/assets/js/orchidSearch.js"></script>
+<!-- end:inject scripts -->
+
+</body>
+</html>

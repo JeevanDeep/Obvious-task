@@ -1,0 +1,19 @@
+{
+  "ownKey": "pages",
+  "childrenPages": {"changelog": {
+    "ownKey": "changelog",
+    "ownPages": [{
+      "reference": {
+        "path": "",
+        "baseUrl": "https://jeevandeep.github.io/Obvious-task",
+        "fileName": "changelog",
+        "extension": "html",
+        "usePrettyUrl": true,
+        "link": "https://jeevandeep.github.io/Obvious-task/changelog"
+      },
+      "description": "",
+      "title": "Changelog",
+      "content": ""
+    }]
+  }}
+}

@@ -1,0 +1,56 @@
+{
+  "ownKey": "index",
+  "childrenPages": {"meta": {
+    "ownKey": "meta",
+    "ownPages": [
+      {
+        "reference": {
+          "path": "meta",
+          "baseUrl": "https://jeevandeep.github.io/Obvious-task",
+          "fileName": "home.index",
+          "extension": "json",
+          "usePrettyUrl": false,
+          "link": "https://jeevandeep.github.io/Obvious-task/meta/home.index.json"
+        },
+        "description": "",
+        "title": "Home . Index"
+      },
+      {
+        "reference": {
+          "path": "meta",
+          "baseUrl": "https://jeevandeep.github.io/Obvious-task",
+          "fileName": "pages.index",
+          "extension": "json",
+          "usePrettyUrl": false,
+          "link": "https://jeevandeep.github.io/Obvious-task/meta/pages.index.json"
+        },
+        "description": "",
+        "title": "Pages . Index"
+      },
+      {
+        "reference": {
+          "path": "meta",
+          "baseUrl": "https://jeevandeep.github.io/Obvious-task",
+          "fileName": "wiki.index",
+          "extension": "json",
+          "usePrettyUrl": false,
+          "link": "https://jeevandeep.github.io/Obvious-task/meta/wiki.index.json"
+        },
+        "description": "",
+        "title": "Wiki . Index"
+      },
+      {
+        "reference": {
+          "path": "meta",
+          "baseUrl": "https://jeevandeep.github.io/Obvious-task",
+          "fileName": "all.index",
+          "extension": "json",
+          "usePrettyUrl": false,
+          "link": "https://jeevandeep.github.io/Obvious-task/meta/all.index.json"
+        },
+        "description": "",
+        "title": "All . Index"
+      }
+    ]
+  }}
+}

@@ -1,0 +1,8 @@
+User-agent: *
+
+Disallow: /
+
+
+
+Sitemap: https://jeevandeep.github.io/Obvious-task/sitemap.xml
+

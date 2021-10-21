@@ -1,0 +1,31 @@
+{
+  "ownKey": "home",
+  "ownPages": [
+    {
+      "reference": {
+        "path": "",
+        "baseUrl": "https://jeevandeep.github.io/Obvious-task",
+        "fileName": "",
+        "extension": "html",
+        "usePrettyUrl": true,
+        "link": "https://jeevandeep.github.io/Obvious-task"
+      },
+      "description": "",
+      "title": "Moj",
+      "content": "<h1 id=\"moj---indias-most-popular-short-video-app\">Moj - India's Most Popular Short Video App<\/h1>\n<p>Moj is India\u2019s own short video app created locally by ShareChat - a hot new stage to show your flaming talent to the world out there - never ending entertaining videos to watch. We discover new talent every day. New challenges every day.<\/p>\n"
+    },
+    {
+      "reference": {
+        "path": "",
+        "baseUrl": "https://jeevandeep.github.io/Obvious-task",
+        "fileName": "404",
+        "extension": "html",
+        "usePrettyUrl": false,
+        "link": "https://jeevandeep.github.io/Obvious-task/404.html"
+      },
+      "description": "",
+      "title": "Moj",
+      "content": ""
+    }
+  ]
+}
