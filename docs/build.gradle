@@ -1,0 +1,26 @@
+plugins {
+    id 'kotlin'
+    id "com.eden.orchidPlugin" version "0.21.0"
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.30"
+
+    orchidImplementation "io.github.javaeden.orchid:OrchidDocs:0.21.0"
+    orchidImplementation "io.github.javaeden.orchid:OrchidKotlindoc:0.21.0"
+    orchidImplementation "io.github.javaeden.orchid:OrchidPluginDocs:0.21.0"
+}
+
+repositories {
+    mavenCentral()
+    maven { url = "https://kotlin.bintray.com/kotlinx/" }
+}
+
+
+orchid {
+    theme = "Editorial"
+    version = "1.0.0"
+    srcDir  = "src/orchid/resources"
+    destDir = "build/docs/orchid"
+//    githubToken = "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"
+}
