@@ -29,12 +29,12 @@ Editorial:
       asSubmenu: true
       submenuTitle: 'Packages'
 # config.yml
-wiki:
-  sections:
-    userManual:
-      adapter:
-        type: "github"
-        repo: "[jeevandeep/Obvious-task]"
+#wiki:
+#  sections:
+#    userManual:
+#      adapter:
+#        type: "github"
+#        repo: "[jeevandeep/Obvious-task]"
 
 # config.yml
 services:
@@ -42,4 +42,4 @@ services:
     stages:
       - type: 'githubPages'
         username: '[jeevandeep]' # the username which created the personal access token
-        repo: '[jeevandeep/Obvious-task]' # the repo to publish to
+        repo: 'jeevandeep/Obvious-task' # the repo to publish to
