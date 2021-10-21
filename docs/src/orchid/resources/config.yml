@@ -28,11 +28,18 @@ Editorial:
       node: 'packages'
       asSubmenu: true
       submenuTitle: 'Packages'
+# config.yml
+wiki:
+  sections:
+    userManual:
+      adapter:
+        type: "github"
+        repo: "[jeevandeep/Obvious-task]"
 
+# config.yml
 services:
   publications:
     stages:
-      ghPages:
-        branch: gh-pages
-        repo: 'JeevanDeep/Obvious-task'
-        username: 'JeevanDeep'
+      - type: 'githubPages'
+        username: '[jeevandeep]' # the username which created the personal access token
+        repo: '[jeevandeep/Obvious-task]' # the repo to publish to
